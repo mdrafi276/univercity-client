@@ -1,9 +1,19 @@
-import { Layout } from "antd";
-import Sider from "antd/es/layout/Sider";
-import { Content, Footer, Header } from "antd/es/layout/layout";
-import SubMenu from "antd/es/menu/SubMenu";
+import { Layout, Menu } from 'antd'
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import React from 'react';
+
+const { Header, Content, Footer, Sider } = Layout;
 
 const MainLayout = () => {
+
+    const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
+        (icon, index) => ({
+            key: String(index + 1),
+            icon: React.createElement(icon),
+            label: `nav ${index + 1}`,
+        }),
+    );
+
     return (
         <Layout>
             <Sider
@@ -17,17 +27,16 @@ const MainLayout = () => {
                 }}
             >
                 <div className="demo-logo-vertical" />
-                <SubMenu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
             </Sider>
             <Layout>
-                <Header style={{ padding: 0, background: colorBgContainer }} />
+                <Header style={{ padding: 0, }} />
                 <Content style={{ margin: '24px 16px 0' }}>
                     <div
                         style={{
                             padding: 24,
                             minHeight: 360,
-                            background: colorBgContainer,
-                            borderRadius: borderRadiusLG,
+
                         }}
                     >
                         content
