@@ -42,7 +42,7 @@ const MainLayout = () => {
                     console.log(collapsed, type);
                 }}
             >
-                <div style={{ color: 'white', textAlign: 'center', height: "4rem", display: "flex", justifyContent: "center", justifyItems: "center" }}>
+                <div style={{ color: 'white', textAlign: 'center', height: "", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <h1>Ph Uni</h1>
                 </div>
 
