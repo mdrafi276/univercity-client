@@ -6,13 +6,10 @@ const MainLayout = () => {
 
     const items: MenuProps["items"] = [
         {
-            key: '1',
+            key: 'Dashboard',
             label: 'Dashboard'
         },
-        {
-            key: '2',
-            label: 'Profile'
-        },
+
         {
             key: '3',
             label: 'User management',
