@@ -15,7 +15,7 @@ const MainLayout = () => {
         {
             key: 'User management',
             label: 'User management',
-            cheldren: [
+            children: [
                 {
                     key: '1',
                     label: 'Create Admin',
