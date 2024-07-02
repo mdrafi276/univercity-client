@@ -1,4 +1,5 @@
 import { Layout, Menu, MenuProps } from 'antd'
+import { NavLink } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -7,7 +8,7 @@ const MainLayout = () => {
     const items: MenuProps["items"] = [
         {
             key: 'Dashboard',
-            label: 'Dashboard'
+            label: <NavLink>Dashboard</NavLink>
         },
 
 
