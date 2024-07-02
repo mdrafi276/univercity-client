@@ -8,12 +8,12 @@ const MainLayout = () => {
     const items: MenuProps["items"] = [
         {
             key: 'Dashboard',
-            label: <NavLink>Dashboard</NavLink>
+            label: <NavLink to='/admin/dashboard'>Dashboard</NavLink>
         },
 
 
         {
-            key: '3',
+            key: 'User management',
             label: 'User management',
             cheldren: [
                 {
