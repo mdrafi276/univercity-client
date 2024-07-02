@@ -10,20 +10,26 @@ const MainLayout = () => {
             key: 'Dashboard',
             label: <NavLink to='/admin/dashboard'>Dashboard</NavLink>
         },
-
-
         {
             key: 'User management',
             label: 'User management',
             children: [
                 {
-                    key: '1',
-                    label: 'Create Admin',
+                    key: 'Create Admin',
+                    label: <NavLink to='/admin/create-admin'>Create Admin</NavLink>,
                 },
+
                 {
-                    key: '2',
-                    label: "Create Student"
-                }
+                    key: 'Create Student',
+                    label: <NavLink to='/admin/create-Student'>Create Student</NavLink>,
+                },
+
+                {
+                    key: 'Create Faculty',
+                    label: <NavLink to='/admin/create-faculty'>Create Faculty</NavLink>,
+                },
+
+
             ]
         },
     ]
