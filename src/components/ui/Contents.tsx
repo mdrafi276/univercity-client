@@ -13,6 +13,7 @@ const Contents = ({ children }: { children: React.ReactNode }) => {
         color: "black",
       }}
     >
+
       <UMBreadCrumb
         items={[
           {
