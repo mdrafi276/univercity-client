@@ -1,13 +1,18 @@
 import { ReactNode } from "react";
 
+type TRoute = {
+    path: string;
+    element: ReactNode;
+}
+
 type TUserPath = {
     name: string;
     path?: string;
     element?: ReactNode;
-    children?: TUserPath;
+    children?: TUserPath[];
 }
 
-export const RouteGenerater = (items: TUserPath) => {
+export const RouteGenerater = (items: TUserPath[]) => {
     const routes = items.reduce((acc: TRoute[], item) => {
         if (item.path && item.element) {
             acc.push({
@@ -19,7 +24,7 @@ export const RouteGenerater = (items: TUserPath) => {
         if (item.children) {
             item.children.forEach((child) => {
                 acc.push({
-                    path: child.path,
+                    path: child.path!,
                     element: child.element,
                 });
             });
