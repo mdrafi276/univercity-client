@@ -16,7 +16,7 @@ type TSidebarItem = {
   children?: TSidebarItem[];
 };
 
-const adminPaths = [
+export const adminPaths = [
   {
     name: 'Dashboard',
     path: 'dashboard',
@@ -96,23 +96,3 @@ export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   return acc;
 }, []);
 
-//! Hard coded way
-
-// export const adminPaths = [
-//   {
-//     path: 'dashboard',
-//     element: <AdminDashboard />,
-//   },
-//   {
-//     path: 'create-student',
-//     element: <CreateStudent />,
-//   },
-//   {
-//     path: 'create-admin',
-//     element: <CreateAdmin />,
-//   },
-//   {
-//     path: 'create-faculty',
-//     element: <CreateFaculty />,
-//   },
-// ];

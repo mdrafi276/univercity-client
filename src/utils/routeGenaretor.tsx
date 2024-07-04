@@ -27,14 +27,5 @@ export const RouteGenerater = (items: TUserPath) => {
 
         return acc;
     }, []);
-
-
-
-
-
-
-
-
-
     return routes
 };
