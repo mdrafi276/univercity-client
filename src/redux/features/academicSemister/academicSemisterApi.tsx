@@ -7,6 +7,7 @@ const academicSemisterApi = baseApi.injectEndpoints({
                 url: '/academic-semisters',
                 method: 'GET',
 
+
             }),
         }),
     }),
