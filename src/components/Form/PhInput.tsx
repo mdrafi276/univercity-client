@@ -8,7 +8,7 @@ const PhInput = () => {
         <>
             {label ? label : null}
             <Controller name={name} render={(field) => {
-                <Input type={type} id={name} {...register(name)} />
+                <Input {...field} type={type} id={name} {...register(name)} />
             }} />
         </>
     )
