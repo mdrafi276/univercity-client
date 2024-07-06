@@ -1,3 +1,4 @@
+import { Input } from 'antd';
 import { useFormContext } from 'react-hook-form';
 
 const PhInput = () => {
@@ -6,7 +7,9 @@ const PhInput = () => {
     return (
         <>
             {label ? label : null}
-            <input type="text" name="" id="" />
+            <Controller name={name} render={(field) => {
+                <Input type={type} id={name} {...register(name)} />
+            }} />
         </>
     )
 };
