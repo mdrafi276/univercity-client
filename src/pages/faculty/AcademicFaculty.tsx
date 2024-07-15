@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AcademicSemister = () => {
+const AcademicFaculty = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const AcademicSemister = () => {
     );
 };
 
-export default AcademicSemister;
+export default AcademicFaculty;

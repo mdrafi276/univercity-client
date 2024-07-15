@@ -1,48 +1,35 @@
-import { Row } from 'antd';
+import { Form } from 'antd';
 import { ReactNode } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-type PhFormProps = {
-    onSubmit: SubmitHandler<FieldValues>,
-    children: ReactNode,
-
-} & TFormConfig;
+import {
+  FieldValues,
+  FormProvider,
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form';
 
 type TFormConfig = {
-    defaultValues: Record<string, any>;
-}
-
-const PhForm = ({ onSubmit, children, defaultValues }: PhFormProps) => {
-    const formConfig: TFormConfig = {};
-    if (defaultValues) {
-        formConfig['defaultValues'] = defaultValues;
-    }
-    const methods = useForm(formConfig);
-    return (
-        <Row justify={'center'} align={'middle'} >
-            <form onSubmit={methods.handleSubmit(onSubmit)}>
-                {children}
-            </form>
-        </Row>
-
-
-
-
-
-
-
-
-
-
-
-    );
+  defaultValues?: Record<string, any>;
 };
 
+type TFormProps = {
+  onSubmit: SubmitHandler<FieldValues>;
+  children: ReactNode;
+} & TFormConfig;
 
+const PHForm = ({ onSubmit, children, defaultValues }: TFormProps) => {
+  const formConfig: TFormConfig = {};
 
+  if (defaultValues) {
+    formConfig['defaultValues'] = defaultValues;
+  }
 
+  const methods = useForm(formConfig);
 
+  return (
+    <FormProvider {...methods}>
+      <Form layout='vertical' onFinish={methods.handleSubmit(onSubmit)}>{children}</Form>
+    </FormProvider>
+  );
+};
 
-
-
-
-export default PhForm;
+export default PHForm;
