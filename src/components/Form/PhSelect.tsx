@@ -1,31 +1,29 @@
-import { Form, Select, Space } from 'antd';
-import { Controller, FieldValues, UseControllerProps } from 'react-hook-form';
-type IPHSelectProps = {
-    label: string;
-    name: string;
-    options: { value: string, label: string, disabled?: boolean }[];
-}
-const PhSelect = ({ label, name, options }: IPHSelectProps) => {
-    const handleChange = (value: string) => {
+import { Form, Select } from 'antd';
+import { Controller } from 'react-hook-form';
 
-    }
-    return (
-        <Controller render={({ field, fieldState: { error } }) => (<Form.Item label={label}>
-            <Select
-                style={{ width: 120 }}
-                {...field}
-                options={[
-                    { value: 'jack', label: 'jack' }
-                ]}
-            >
-
-            </Select>
-
-        </Form.Item>)}>
-            {error && <small style={{ color: 'red' }}>{"Something went wrong"}</small>}
-
-        </Controller>
-    );
+type TPHSelectProps = {
+  label: string;
+  name: string;
+  options: { value: string; label: string; disabled?: boolean }[];
 };
 
-export default PhSelect;
+const PHSelect = ({ label, name, options }: TPHSelectProps) => {
+  return (
+    <Controller
+      name={name}
+      render={({ field, fieldState: { error } }) => (
+        <Form.Item label={label}>
+          <Select
+            style={{ width: '100%' }}
+            {...field}
+            options={options}
+            size="large"
+          />
+          {error && <small style={{ color: 'red' }}>{error.message}</small>}
+        </Form.Item>
+      )}
+    />
+  );
+};
+
+export default PHSelect;
