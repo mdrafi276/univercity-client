@@ -12,7 +12,12 @@ import { useGetAllSemestersQuery } from '../../../redux/features/admin/academicM
 
 const SemesterRegister = () => {
 
-    const { data: academicSemester } = useGetAllSemestersQuery()
+    const { data: academicSemester } = useGetAllSemestersQuery(undefined);
+
+    const academicSemesterOptions = academicSemester?.data?.map(item => ({
+        value: item._id,
+        label: `${item.name} ${item.year}`
+    }))
 
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
@@ -48,7 +53,7 @@ const SemesterRegister = () => {
                         onSubmit={onSubmit}
                         resolver={zodResolver(academicSemesterSchema)}
                     >
-                        <PHSelect label="Name" name="name" options={semesterOptions} />
+                        <PHSelect label="Name" name="name" options={academicSemesterOptions} />
                         <PHSelect
                             label="Start Month"
                             name="startMonth"
