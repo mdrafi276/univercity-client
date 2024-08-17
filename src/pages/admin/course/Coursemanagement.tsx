@@ -7,12 +7,13 @@ import { monthOptions } from '../../../constants/global';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { academicSemesterSchema } from '../../../schemas/academicManagement.schema';
-import { useAddAcademicSemesterMutation } from '../../../redux/features/admin/academicManagement.api';
-
-import { TResponse } from '../../../types/global';
+import { useGetAllSemestersQuery } from '../../../redux/features/admin/academicManagement.api';
 
 
 const SemesterRegister = () => {
+
+    const { data: academicSemester } = useGetAllSemestersQuery()
+
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         const toastId = toast.loading('Creating...');
@@ -48,7 +49,6 @@ const SemesterRegister = () => {
                         resolver={zodResolver(academicSemesterSchema)}
                     >
                         <PHSelect label="Name" name="name" options={semesterOptions} />
-                        <PHSelect label="Year" name="year" options={yearOptions} />
                         <PHSelect
                             label="Start Month"
                             name="startMonth"
