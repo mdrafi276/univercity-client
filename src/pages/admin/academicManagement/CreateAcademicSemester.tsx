@@ -4,7 +4,7 @@ import { Button, Col, Flex } from 'antd';
 import PHSelect from '../../../components/form/PHSelect';
 import { semesterOptions } from '../../../constants/semester';
 import { monthOptions } from '../../../constants/global';
-import { zodResolver } from '@hookform/resolvers/zod';
+;
 
 import { academicSemesterSchema } from '../../../schemas/academicManagement.schema';
 import { useAddAcademicSemesterMutation } from '../../../redux/features/admin/academicManagement.api';
