@@ -23,6 +23,7 @@ const RegisteredSemester = () => {
         })
     );
 
+
     const columns: TableColumnsType<TTableData> = [
         {
             title: 'Name',
