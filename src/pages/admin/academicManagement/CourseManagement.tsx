@@ -55,4 +55,4 @@ const courseManagementApi = baseApi.injectendpoients({
         })
     }),
 })
-export const { useAddAcademicSemesterMutation, useGetAllSemestersQuery, useAddCourse } = courseManagementApi;
+export const { useAddAcademicSemesterMutation, useGetAllSemestersQuery, useAddCourseMutation } = courseManagementApi;
