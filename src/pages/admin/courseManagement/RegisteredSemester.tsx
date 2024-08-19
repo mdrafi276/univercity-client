@@ -49,7 +49,7 @@ const RegisteredSemester = () => {
                     key: 'x',
                     render: (item) => (
                         <div>
-                            <Button onClick={() => trigger = { ['click']}}>Update</Button>
+                            <Button onClick={() => setSemesterId(item._key.)}>Update</Button>
                         </div>
                     )
                 }
